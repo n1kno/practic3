@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	
-	"github.com/n1kno/practic2/pkg/list"
-	"github.com/n1kno/practic2/pkg/queue"
-	"github.com/n1kno/practic2/pkg/stack"
+	"github.com/n1kno/practic3/pkg/list"
+	"github.com/n1kno/practic3/pkg/queue"
+	"github.com/n1kno/practic3/pkg/stack"
 )
 
 func main() {
