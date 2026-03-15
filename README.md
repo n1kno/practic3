@@ -1,86 +1,22 @@
-package main
+# Practic2 - Структуры данных на Go с дженериками
 
-import (
-	"fmt"
-	
-	"github.com/n1kno/practic2/pkg/list"
-	"github.com/n1kno/practic2/pkg/queue"
-	"github.com/n1kno/practic2/pkg/stack"
-)
+[![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?style=flat&logo=go)](https://golang.org/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-func main() {
-	// Демонстрация работы стека с разными типами
-	demonstrateStack()
-	
-	// Демонстрация работы очереди с разными типами
-	demonstrateQueue()
-	
-	// Демонстрация работы списка с разными типами
-	demonstrateList()
-}
+## 📋 Описание
+Учебный проект, демонстрирующий реализацию базовых структур данных на языке Go с использованием дженериков (generics).
 
-func demonstrateStack() {
-	fmt.Println("=== Демонстрация стека ===")
-	
-	// Стек с int
-	intStack := stack.New[int]()
-	intStack.Push(1)
-	intStack.Push(2)
-	intStack.Push(3)
-	
-	fmt.Println("Стек int:")
-	for !intStack.IsEmpty() {
-		if val, ok := intStack.Pop(); ok {
-			fmt.Printf("%d ", val)
-		}
-	}
-	fmt.Println()
-	
-	// Стек со string
-	stringStack := stack.New[string]()
-	stringStack.Push("Hello")
-	stringStack.Push("World")
-	
-	if val, ok := stringStack.Peek(); ok {
-		fmt.Printf("Верхний элемент: %s\n", val)
-	}
-}
+## 🚀 Структуры данных
+- **Стек (Stack)** - LIFO (Last In First Out)
+- **Очередь (Queue)** - FIFO (First In First Out)
+- **Связный список (LinkedList)** - односвязный список
 
-func demonstrateQueue() {
-	fmt.Println("\n=== Демонстрация очереди ===")
-	
-	// Очередь с int
-	intQueue := queue.New[int]()
-	intQueue.Enqueue(1)
-	intQueue.Enqueue(2)
-	intQueue.Enqueue(3)
-	
-	fmt.Println("Очередь int:")
-	for !intQueue.IsEmpty() {
-		if val, ok := intQueue.Dequeue(); ok {
-			fmt.Printf("%d ", val)
-		}
-	}
-	fmt.Println()
-}
+## ✨ Особенности
+- ✅ Полная поддержка дженериков - работа с любыми типами данных
+- ✅ Модульная структура - каждый пакет можно использовать отдельно
+- ✅ Безопасная обработка ошибок (паттерн "ok")
+- ✅ Вспомогательные методы (IsEmpty, Size)
 
-func demonstrateList() {
-	fmt.Println("\n=== Демонстрация списка ===")
-	
-	// Список с int
-	intList := list.New[int]()
-	intList.InsertAtEnd(1)
-	intList.InsertAtEnd(2)
-	intList.InsertAtBeginning(0)
-	intList.InsertAtEnd(3)
-	
-	fmt.Printf("Список int: %s\n", intList.Display(" -> "))
-	
-	// Список со string
-	stringList := list.New[string]()
-	stringList.InsertAtEnd("Go")
-	stringList.InsertAtEnd("Rust")
-	stringList.InsertAtEnd("Python")
-	
-	fmt.Printf("Список string: %s\n", stringList.Display(" -> "))
-}
+## 📦 Установка
+```bash
+go get github.com/n1kno/practic2
